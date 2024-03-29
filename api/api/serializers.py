@@ -1,10 +1,7 @@
 from rest_framework import serializers
-from .models import Drink, PopulationData
+from .models import PopulationData
 
-class DrinkSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Drink
-        fields = ['id','name','description']
+
 
 class PopulationDataSerializer(serializers.ModelSerializer):
     class Meta:

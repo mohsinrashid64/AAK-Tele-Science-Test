@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'drinks',
+    'api',
     'corsheaders'
 ]
 
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     # "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "drinks.urls"
+ROOT_URLCONF = "api.urls"
 
 TEMPLATES = [
     {
@@ -80,7 +80,7 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 
-WSGI_APPLICATION = "drinks.wsgi.application"
+WSGI_APPLICATION = "api.wsgi.application"
 
 
 # Database
