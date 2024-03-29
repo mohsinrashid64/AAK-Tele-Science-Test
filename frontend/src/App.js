@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPopulation } from './redux/slice/population';
 import Graph from './Components/Graph';
 
-import './App.css';
+import './styleSheets';
 
 function App() {
   const dispatch = useDispatch();
@@ -30,16 +30,9 @@ function App() {
       {populationData && currentYearData && (
         <div>
           <h2>Year: {currentYearData.year}</h2>
-          <h2>Population 65+: {currentYearData.population_65plus}</h2>
-          <h2>Population 25-64: {currentYearData.population_25to64}</h2>
-          <h2>Population 15-24: {currentYearData.population_15to24}</h2>
-          <h2>Population 5-14: {currentYearData.population_5to14}</h2>
-          <h2>Population 0-4: {currentYearData.population_0to4}</h2>
-
+          <Graph currentYearData={currentYearData} />
           <button onClick={handlePrevYear}>Previous Year</button>
           <button onClick={handleNextYear}>Next Year</button>
-
-          <Graph currentYearData={currentYearData} />
         </div>
       )}
     </div>

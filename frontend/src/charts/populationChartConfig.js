@@ -41,7 +41,7 @@ const populationChartConfig = {
       min: -50,
       max: 50,
       title: {
-        text: 'Age',
+        text: 'Age Interval',
       },
     },
     tooltip: {
@@ -56,9 +56,6 @@ const populationChartConfig = {
           return Math.abs(val) + "%"
         }
       }
-    },
-    title: {
-      text: 'Mauritius population pyramid 2011'
     },
     xaxis: {
       categories: ['64+','25-64','15-24','5-14','0-4',],
