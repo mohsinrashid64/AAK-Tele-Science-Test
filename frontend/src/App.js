@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPopulation } from './redux/slice/population';
 import Graph from './Components/Graph';
-
 import './styleSheets/App.css';
 
 function App() {
