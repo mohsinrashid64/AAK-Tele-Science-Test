@@ -3,27 +3,39 @@ import Chart from "react-apexcharts";
 import populationChartConfig from '../charts/populationChartConfig'
 
 class Graph extends Component {
+
   constructor(props) {
     super(props);
-    this.state = {
-      series: [],
-      options:populationChartConfig
-    };
+    this.state = populationChartConfig
   }
+
+  
   componentDidUpdate(prevProps) {
+  const { currentYearData } = this.props;
+
+  const total = currentYearData.population_65plus+currentYearData.population_25to64+currentYearData.population_15to24+currentYearData.population_5to14+currentYearData.population_0to4
+    
     if (prevProps.currentYearData !== this.props.currentYearData) {
-      const series = [
-        {
-          name: "Funnel Series",
-          data: [
-            { x: "65+", y: this.props.currentYearData.population_65plus },
-            { x: "25-64", y: this.props.currentYearData.population_25to64 },
-            { x: "15-24", y: this.props.currentYearData.population_15to24 },
-            { x: "5-14", y: this.props.currentYearData.population_5to14 },
-            { x: "0-4", y: this.props.currentYearData.population_0to4 },
-          ],
-        },
-      ];
+      const series = [{
+        name: 'Males',
+        data: [
+          (-currentYearData.population_65plus/total)*100,
+          (-currentYearData.population_25to64/total)*100,
+          (-currentYearData.population_15to24/total)*100,
+          (-currentYearData.population_5to14/total)*100,
+          (-currentYearData.population_0to4/total)*100,
+        ]
+      },
+      {
+        name: 'Females',
+        data: [
+          (currentYearData.population_65plus/total)*100,
+          (currentYearData.population_25to64/total)*100,
+          (currentYearData.population_15to24/total)*100,
+          (currentYearData.population_5to14/total)*100,
+          (currentYearData.population_0to4/total)*100,
+        ]
+      }]
       this.setState({ series });
     }
   }
@@ -37,7 +49,7 @@ class Graph extends Component {
               options={this.state.options}
               series={this.state.series}
               type="bar"
-              width="500"
+              width="1000"
             />
           </div>
         </div>

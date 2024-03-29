@@ -1,49 +1,91 @@
 const populationChartConfig = {
+          
+  series: [{
+    name: 'Males',
+    data: []
+  },
+  {
+    name: 'Females',
+    data: []
+  }
+  ],
+  options: {
     chart: {
-        background: '#ff3333',
-
-        height: '1000px', 
-        width: '1000px',
+      type: 'bar',
+      height: 440,
+      stacked: true
     },
+    colors: ['#008FFB', '#FF4560'],
     plotOptions: {
       bar: {
-        borderRadius: 5,
         horizontal: true,
-        barHeight: '80%',
-        isFunnel: true,
+        barHeight: '100%',
       },
     },
     dataLabels: {
-      style: {
-        fontSize: '14px',
-        fontFamily: 'Helvetica, Arial, sans-serif',
-        // fontWeight: 'bold',
+      enabled: false
+    },
+    stroke: {
+      width: 1,
+      colors: ["#fff"]
+    },
+    
+    grid: {
+      xaxis: {
+        lines: {
+          show: false
+        }
+      }
+    },
+    yaxis: {
+      min: -50,
+      max: 50,
+      title: {
+        text: 'Age',
       },
-      enabled: true,
-      formatter: function (val, opt) {
-        return opt.w.globals.labels[opt.dataPointIndex] + ':  ' + val
+    },
+    tooltip: {
+      shared: false,
+      x: {
+        formatter: function (val) {
+          return val
+        }
       },
-      dropShadow: {
-        enabled: true,
-      },
+      y: {
+        formatter: function (val) {
+          return Math.abs(val) + "%"
+        }
+      }
     },
     title: {
-      text: 'Pakistan\'s Population Data',
-      align: 'middle',
+      text: 'Mauritius population pyramid 2011'
     },
     xaxis: {
-      categories: [
-        '65+',
-        '25-64',
-        '15-24',
-        '5-14',
-        '0-4',
-      ],
+      categories: ['64+','25-64','15-24','5-14','0-4',],
+      title: {
+        text: 'Male to Female Percentage'
+      },
+      labels: {
+        formatter: function (val) {
+          return Math.abs(Math.round(val)) + "%"
+        }
+      }
     },
-    legend: {
-      show: false,
-    },
-  };
+  },
+};
   
-  export default populationChartConfig;
+export default populationChartConfig;
+
+
+
+
+
+
+  ////////
+
+
+
+
+
+  
   
