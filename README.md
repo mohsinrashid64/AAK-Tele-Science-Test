@@ -19,7 +19,7 @@ Before setting up the project, ensure you have the following prerequisites insta
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/project-name.git
+   git clone [https://github.com/your-username/project-name.git](https://github.com/mohsinrashid64/AAK-Tele-Science-Test.git)
 	```
 	
 2. Create a Python virtual environment:
