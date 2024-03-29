@@ -49,7 +49,7 @@ class Graph extends Component {
               options={this.state.options}
               series={this.state.series}
               type="bar"
-              width="1000"
+              width="800"
             />
           </div>
         </div>

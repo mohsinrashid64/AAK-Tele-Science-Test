@@ -25,8 +25,8 @@ function App() {
   const currentYearData = populationData ? populationData[currentYearIndex] : null;
 
   return (
-    <div>
-      <h1>Population Data</h1>
+    <div className="container">
+      <h1>Pakistans Population Data</h1>
       {populationData && currentYearData && (
         <div>
           <h2>Year: {currentYearData.year}</h2>
@@ -36,6 +36,7 @@ function App() {
         </div>
       )}
     </div>
+
   );
 }
 

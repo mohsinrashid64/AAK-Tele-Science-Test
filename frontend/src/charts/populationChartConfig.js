@@ -41,7 +41,7 @@ const populationChartConfig = {
       min: -50,
       max: 50,
       title: {
-        text: 'Age Interval',
+        text: 'Age',
       },
     },
     tooltip: {
