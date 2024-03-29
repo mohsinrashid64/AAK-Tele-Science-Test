@@ -5,5 +5,7 @@ from api import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('population/', views.return_list_population.as_view()),
-    path('',views.index, name='index')
+    path('',views.index, name='index'),
+    # path('savedata',views.import_population_data_from_csv)
+
 ]

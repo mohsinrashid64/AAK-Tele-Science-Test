@@ -1,15 +1,5 @@
 const populationChartConfig = {
           
-  series: [{
-    name: 'Males',
-    data: []
-  },
-  {
-    name: 'Females',
-    data: []
-  }
-  ],
-  options: {
     chart: {
       type: 'bar',
       height: 440,
@@ -41,7 +31,7 @@ const populationChartConfig = {
       min: -50,
       max: 50,
       title: {
-        text: 'Age',
+        text: 'Age Interval',
       },
     },
     tooltip: {
@@ -67,7 +57,7 @@ const populationChartConfig = {
           return Math.abs(Math.round(val)) + "%"
         }
       }
-    },
+    
   },
 };
   
