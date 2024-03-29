@@ -1,14 +1,8 @@
-from django.http import JsonResponse
-
 from .models import PopulationData
 from .serializers import  PopulationDataSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
-import csv
-
-
-
+from django.shortcuts import render
 
 class return_list_population(APIView):
     def get(self, request):
@@ -18,6 +12,7 @@ class return_list_population(APIView):
 
 
 
-
+def index(request):
+    return render(request,'index.html')
 
 
