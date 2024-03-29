@@ -1,4 +1,4 @@
-# Project Name
+# Population Data Visualization Project
 
 This project consists of a Django API designed to provide population data categorized by age intervals for both male and female demographics. Alongside the API, there is a React frontend that utilizes Redux for state management to fetch and display the population data. The frontend incorporates React ApexCharts to visualize the population distribution between males and females across different age intervals from the years 1950 to 2021.
 
